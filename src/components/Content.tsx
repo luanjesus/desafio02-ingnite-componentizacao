@@ -1,6 +1,7 @@
 import { MovieCard } from "./MovieCard"
 import { Header } from "./Header"
 import '../styles/content.scss';
+import { Key } from "react-feather";
 
 interface ContentProps{
   movies: Array<{
@@ -22,8 +23,8 @@ export function Content( { movies, selectedGenre } : ContentProps) {
 
     <main>
       <div className="movies-list">
-        {movies.map(movie => (
-          <MovieCard title={movie.Title} poster={movie.Poster} runtime={movie.Runtime} rating={movie.Ratings[0].Value} />
+        {movies.map(movie =>   ( 
+          <MovieCard key={movie.Title} title={movie.Title} poster={movie.Poster} runtime={movie.Runtime} rating={movie.Ratings[0].Value} />
         ))}
       </div>
     </main>

@@ -18,7 +18,7 @@ export function SideBar({genres, handleClickButton, selectedGenreId} : SideBarPr
 
       <div className="buttons-container">
         {genres.map(genre => (
-          <Button
+          <Button key={genre.id}
             id={String(genre.id)}
             title={genre.title}
             iconName={genre.name}
